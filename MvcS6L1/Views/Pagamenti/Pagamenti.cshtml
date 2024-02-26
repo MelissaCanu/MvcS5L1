@@ -1,0 +1,28 @@
+﻿<!--aggiungo il modello per la vista con IEnumerable-->
+
+@model IEnumerable<MvcS6L1.Models.Pagamento>
+
+@{
+    ViewBag.Title = "Pagamenti";
+}
+
+<h2>Pagamenti</h2>
+
+<div class="row">
+
+    @foreach (var pagamento in Model) //ciclo per ogni oggetto pagamento nel modello
+    {
+        <!--card bootstrap per singolo pagamento-->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">@pagamento.IDDipendente</h5>
+                    <p class="card-text"><strong>Indirizzo:</strong> @pagamento.PeriodoPagamento</p>
+                    <p class="card-text"><strong>Codice Fiscale:</strong> @pagamento.AmmontarePagamento</p>
+                    <p class="card-text"><strong>Coniugato:</strong> @pagamento.TipoPagamento</p>
+                </div>
+            </div>
+        </div>
+    }
+
+</div>

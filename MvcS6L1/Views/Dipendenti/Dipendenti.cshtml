@@ -1,0 +1,31 @@
+﻿<!--aggiungo il modello per la vista-->
+
+<!--In questo codice, la vista si aspetta un elenco di oggetti Dipendente.
+    Quindi per iterare su ogni oggetto Dipendente in questo elenco uso IEnumerable -->
+@model IEnumerable<MvcS6L1.Models.Dipendente>
+
+@{
+    ViewBag.Title = "Dipendenti";
+}
+
+<h2>Dipendenti</h2>
+
+<div class="row">
+    <!--Per ogni oggetto Dipendente, visualizzo le proprietà Nome, Cognome, Indirizzo, CodiceFiscale, Coniugato, NumeroFigli e Mansione-->
+    @foreach (var dipendente in Model) //ciclo per ogni dipendente nel modello
+    {
+        <!--card bootstrap per singolo dipendente-->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">@dipendente.Nome @dipendente.Cognome</h5>
+                    <p class="card-text"><strong>Indirizzo:</strong> @dipendente.Indirizzo</p>
+                    <p class="card-text"><strong>Codice Fiscale:</strong> @dipendente.CodiceFiscale</p>
+                    <p class="card-text"><strong>Coniugato:</strong> @dipendente.Coniugato</p>
+                    <p class="card-text"><strong>Numero Figli:</strong> @dipendente.NumeroFigli</p>
+                    <p class="card-text"><strong>Mansione:</strong> @dipendente.Mansione</p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
